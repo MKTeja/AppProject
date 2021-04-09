@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "39643567728",
+    "project_id": "creativecart-78a44",
+    "storage_bucket": "creativecart-78a44.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39643567728:android:dc65c228d096ce12ad06b5",
+        "android_client_info": {
+          "package_name": "com.example.creativecart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39643567728-rbbq7sks2mcp5b1pccmg3mcobcj0qud0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.creativecart",
+            "certificate_hash": "8205fab6a6c178961ae78a769e2d242bdf786e5e"
+          }
+        },
+        {
+          "client_id": "39643567728-pc0alstg2nra0rdv6fcn130516344dcc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD51cYCmIIupA7ILg1zBv6aNLBRA1WviTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39643567728-pc0alstg2nra0rdv6fcn130516344dcc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
