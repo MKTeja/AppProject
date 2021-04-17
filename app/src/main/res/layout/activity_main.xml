@@ -20,20 +20,6 @@
         android:layout_marginEnd="56dp"
         android:src="@drawable/applogo" />
 
-    <TextView
-        android:id="@+id/app_slogan"
-        android:layout_width="248dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="80dp"
-        android:layout_marginTop="200dp"
-        android:text="Eat Clean!!."
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:textStyle="bold|italic"
-        />
 
 
     <Button
