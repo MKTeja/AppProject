@@ -9,6 +9,8 @@
     tools:context=".MainActivity">
 
 
+
+
     <ImageView
         android:id="@+id/app_logo"
         android:layout_width="330dp"
