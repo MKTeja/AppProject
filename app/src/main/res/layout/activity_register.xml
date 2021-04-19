@@ -10,10 +10,10 @@
     <ImageView
         android:id="@+id/register_applogo"
         android:layout_width="300dp"
-        android:layout_height="140dp"
+        android:layout_height="100dp"
         android:src="@drawable/applogo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="150dp"
         />
 
     <EditText
@@ -69,13 +69,43 @@
         android:textColorHint="@color/white"
         android:textSize="19sp"
         />
+    <EditText
+        android:id="@+id/register_retype_password_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_password_input"
+        android:background="@drawable/input_design"
+        android:padding="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="6dp"
+        android:hint="Retype Password"
+        android:inputType="textPassword"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"
+        />
+    <Spinner
+        android:id="@+id/spinner_type_of_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_retype_password_input"
+        android:background="@drawable/input_design"
+        android:padding="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="6dp"
+        android:hint="Type of User"
+        android:textColorHint="@color/white"
+        android:textSize="19sp"/>
 
 
     <Button
         android:id="@+id/register_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/register_password_input"
+        android:layout_below="@+id/spinner_type_of_user"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
