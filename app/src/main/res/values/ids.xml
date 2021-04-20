@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="toolbar" type="id">100000</item>
+    <item name="fab" type="id">100001</item>
+</resources>

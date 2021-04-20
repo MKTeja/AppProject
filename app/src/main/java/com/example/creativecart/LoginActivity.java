@@ -1,5 +1,6 @@
 package com.example.creativecart;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -34,13 +35,16 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class LoginActivity extends AppCompatActivity {
+
     private EditText InputPhoneNumber, InputPassword, EnterOtp;
     private Button LoginButton, SendOtp, VerifyOtp;
     private ProgressDialog loadingBar;
     private TextView Customer, Retailer, Wholesaler;
+
     private String parentDbName = "Customer", verificationId, verificationStatus ;
 
     private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,14 +64,16 @@ public class LoginActivity extends AppCompatActivity {
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 LoginUser();
             }
         });
 
         Customer.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 LoginButton.setText("Login as Customer");
                 Customer.setVisibility(View.INVISIBLE);
                 Retailer.setVisibility(View.VISIBLE);
@@ -78,7 +84,8 @@ public class LoginActivity extends AppCompatActivity {
 
         Wholesaler.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 LoginButton.setText("Login as Wholesaler");
                 Customer.setVisibility(View.VISIBLE);
                 Wholesaler.setVisibility(View.INVISIBLE);
@@ -89,7 +96,8 @@ public class LoginActivity extends AppCompatActivity {
 
         Retailer.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 LoginButton.setText("Login as Retailer");
                 Wholesaler.setVisibility(View.VISIBLE);
                 Customer.setVisibility(View.VISIBLE);
@@ -99,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void LoginUser(){
+    private void LoginUser() {
         String phone = InputPhoneNumber.getText().toString();
         String password = InputPassword.getText().toString();
 
@@ -120,11 +128,9 @@ public class LoginActivity extends AppCompatActivity {
 
             AllowAccessToAccount(phone, password);
         }
-
     }
 
-    private void AllowAccessToAccount(String phone,String password){
-
+    private void AllowAccessToAccount(String phone, String password) {
 
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
@@ -153,7 +159,6 @@ public class LoginActivity extends AppCompatActivity {
                                     loadingBar.dismiss();
 
                                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                                    intent.putExtra("user", usersData.getUser());
                                     Prevalent.currentOnlineUser = usersData;
                                     startActivity(intent);
                                 }
@@ -163,7 +168,6 @@ public class LoginActivity extends AppCompatActivity {
 
                                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                     Prevalent.currentOnlineUser = usersData;
-                                    intent.putExtra("user", usersData.getUser());
                                     startActivity(intent);
                                 }
                             }
