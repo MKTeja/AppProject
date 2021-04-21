@@ -105,50 +105,7 @@
         android:textColor="@android:color/white"
         />
 
-    <TextView
-        android:id="@+id/Retailer"
-        android:layout_width="95dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_btn"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="29dp"
-        android:text="Retailer?"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        tools:ignore="DuplicateIds" />
-    <TextView
-        android:id="@+id/Wholesaler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_btn"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="8dp"
-        android:text="Wholesaler?"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:visibility="visible" />
-    <TextView
-        android:id="@+id/Customer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/login_btn"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="139dp"
-        android:text="Customer?"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:visibility="invisible" />
+
 
 
     <Button
@@ -243,5 +200,12 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="invisible" />
-
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="243dp"
+        android:layout_height="45dp"
+        android:layout_below="@+id/login_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        android:layout_marginBottom="30dp" />
 </RelativeLayout>

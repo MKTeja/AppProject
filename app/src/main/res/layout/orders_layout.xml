@@ -26,11 +26,14 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:text="Phone Number"
+            android:layout_below="@+id/user_name"
             android:textColor="@color/white"
+            android:layout_marginTop="20dp"
             android:textSize="14dp"
-            android:layout_marginLeft="190dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:textStyle="bold"/>
+
         <TextView
             android:id="@+id/order_total_price"
             android:layout_width="match_parent"
@@ -38,12 +41,13 @@
             android:text="Total Price"
             android:textAlignment="center"
             android:textColor="@color/white"
+            android:layout_below="@+id/phone_number"
             android:textSize="14dp"
             android:gravity="center"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:textStyle="bold"
-            android:layout_marginTop="25dp"/>
+            android:layout_marginTop="35dp"/>
 
         <TextView
             android:id="@+id/order_address_city"
@@ -58,7 +62,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:textStyle="bold"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="20dp"/>
 
         <TextView
             android:id="@+id/order_date_time"
@@ -73,23 +77,19 @@
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
             android:textStyle="bold"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="20dp"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_below="@+id/order_date_time"
             android:background="@color/white"
             android:text="Show This Order Products"
             android:textColor="@color/design_default_color_primary_dark"
             />
-
-
-
-
 
     </RelativeLayout>
 
