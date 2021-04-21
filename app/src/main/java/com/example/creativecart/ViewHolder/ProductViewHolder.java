@@ -1,4 +1,5 @@
 package com.example.creativecart.ViewHolder;
+
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -7,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.creativecart.Interface.ItemClickListner;
 import com.example.creativecart.R;
-public class ProductViewHolder {
+
+public class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener
+{
     public TextView txtProductName, txtProductDescription, txtProductPrice;
     public ImageView imageView;
     public ItemClickListner listner;
@@ -34,5 +37,4 @@ public class ProductViewHolder {
     {
         listner.onClick(view, getAdapterPosition(), false);
     }
-
 }
