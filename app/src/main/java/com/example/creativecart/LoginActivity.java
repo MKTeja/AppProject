@@ -30,16 +30,17 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 
 public class LoginActivity extends AppCompatActivity {
 
     private EditText InputPhoneNumber, InputPassword, EnterOtp;
     private Button LoginButton, SendOtp, VerifyOtp;
     private ProgressDialog loadingBar;
-    private TextView Customer, Retailer, Wholesaler;
+    private TextView Customer, Retailer, Wholesaler, eOTP;
 
     private String parentDbName = "Customer", verificationId, verificationStatus ;
 
@@ -50,17 +51,24 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         LoginButton = findViewById(R.id.login_btn);
-        SendOtp = findViewById(R.id.send_otp);
-        VerifyOtp = findViewById(R.id.verify_otp);
+        eOTP = findViewById(R.id.send_otp);
+        //VerifyOtp = findViewById(R.id.verify_otp);
         InputPassword = findViewById(R.id.login_password_input);
         InputPhoneNumber = findViewById(R.id.login_phone_number_input);
-        EnterOtp = findViewById(R.id.enter_OTP);
+        //EnterOtp = findViewById(R.id.enter_OTP);
         Customer = findViewById(R.id.Customer);
         Retailer = findViewById(R.id.Retailer);
         Wholesaler = findViewById(R.id.Wholesaler);
         loadingBar = new ProgressDialog(this);
+
+        eOTP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this,Otpactivity.class));
+            }
+        });
+
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
