@@ -19,6 +19,7 @@
         tools:targetApi="m"
         >
         <activity android:name=".Otpactivity"></activity>
+        <activity android:name=".Otpactivity1"/>
         <activity android:name=".UpdateItemsActivity"/>
         <activity android:name=".ConfirmFinalOrderActivity" />
         <activity android:name=".NewOrdersActivity" />

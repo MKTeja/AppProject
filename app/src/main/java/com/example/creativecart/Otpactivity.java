@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,10 +24,12 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import java.util.concurrent.TimeUnit;
 
 public class Otpactivity extends AppCompatActivity {
-    private Button btnlogic;
-    private EditText ePhonenumber;
+    private Button btnlogic, login;
+    public EditText ePhonenumber;
     private static final String TAG = "Otpactivity";
-
+    private String VerificationStatus;
+    private TextView login_otp;
+    public String PhNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,8 @@ public class Otpactivity extends AppCompatActivity {
         setContentView(R.layout.activity_otpactivity);
         btnlogic = findViewById(R.id.button4);
         ePhonenumber = findViewById(R.id.editTextNumberDecimal2);
+        login_otp = findViewById(R.id.send_otp);
+        login = findViewById(R.id.login_btn);
         btnlogic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,8 +88,11 @@ public class Otpactivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            startActivity(new Intent(Otpactivity.this,HomeActivity.class));
-                            finish();
+                            VerificationStatus = "Verified!";
+                            Toast.makeText(Otpactivity.this, "OTP verification Successful", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Otpactivity.this,LoginActivity.class);
+                            intent.putExtra("PhNo", ePhonenumber.getText().toString());
+                            startActivity(intent);
                         }
                         else
                         {

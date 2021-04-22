@@ -3,7 +3,6 @@ package com.example.creativecart;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,8 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.creativecart.Model.Users;
+import com.example.creativecart.Otpactivity;
 import com.example.creativecart.Prevalent.Prevalent;
 import com.example.creativecart.Retailer.RetailerCategoryActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -37,22 +36,22 @@ import com.facebook.appevents.AppEventsLogger;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText InputPhoneNumber, InputPassword, EnterOtp;
+    private EditText InputPassword, EnterOtp, PhoneNo;
+    private TextView InputPhoneNumber;
     private Button LoginButton, SendOtp, VerifyOtp;
     private ProgressDialog loadingBar;
     private TextView Customer, Retailer, Wholesaler, eOTP;
-
-    private String parentDbName = "Customer", verificationId, verificationStatus ;
-
+    private String parentDbName = "Customer", verificationId, verificationStatus, PhnNo ;
     private FirebaseAuth mAuth;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         LoginButton = findViewById(R.id.login_btn);
-        eOTP = findViewById(R.id.send_otp);
+        PhoneNo = findViewById(R.id.editTextNumberDecimal2);
+        PhnNo = getIntent().getExtras().get("PhNo").toString() ;
+        //eOTP = findViewById(R.id.send_otp);
         //VerifyOtp = findViewById(R.id.verify_otp);
         InputPassword = findViewById(R.id.login_password_input);
         InputPhoneNumber = findViewById(R.id.login_phone_number_input);
@@ -61,14 +60,14 @@ public class LoginActivity extends AppCompatActivity {
         Retailer = findViewById(R.id.Retailer);
         Wholesaler = findViewById(R.id.Wholesaler);
         loadingBar = new ProgressDialog(this);
+        InputPhoneNumber.setText(PhnNo);
 
-        eOTP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,Otpactivity.class));
-            }
-        });
-
+        //eOTP.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        startActivity(new Intent(LoginActivity.this,Otpactivity.class));
+        //    }
+        //});
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
