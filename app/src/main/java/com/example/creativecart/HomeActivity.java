@@ -205,7 +205,14 @@ public class HomeActivity extends AppCompatActivity
         }
         else if (id == R.id.nav_orders)
         {
-
+            Intent intent = new Intent(HomeActivity.this,NewOrdersActivity.class);
+            intent.putExtra("ToO", "0");
+            startActivity(intent);
+        }
+        else if (id == R.id.nav_search)
+        {
+            Intent intent = new Intent(HomeActivity.this, SearchProductsActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_add)
         {

@@ -40,7 +40,7 @@ import java.util.Locale;
 
 public class RegisterActivity extends AppCompatActivity implements LocationListener {
     private Button CreateAccountButton;
-    private EditText InputName, InputPhoneNumber, InputPassword, InputRetypePassword;
+    private EditText InputName, InputPhoneNumber, InputPassword, InputRetypePassword, SecurityQuestion;
     private ProgressDialog loadingBar;
     private RadioGroup InputUserType;
     private RadioButton radioButton;
@@ -59,6 +59,7 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
         InputPhoneNumber = findViewById(R.id.register_phone_number_input);
         InputRetypePassword = findViewById(R.id.register_retype_password_input);
         InputUserType = findViewById(R.id.type_of_user);
+        SecurityQuestion = findViewById(R.id.security_question);
         loadingBar = new ProgressDialog(this);
 
         CreateAccountButton.setOnClickListener(new View.OnClickListener() {
@@ -110,18 +111,19 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
         radioButton = findViewById(radioID);
         String address = textView_location.getText().toString();
         String user = radioButton.getText().toString();
+        String dob = SecurityQuestion.getText().toString();
 
         if (TextUtils.isEmpty(name))
         {
-            Toast.makeText(this, "Please enter your name...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write your name...", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(phone))
         {
-            Toast.makeText(this, "Please enter your phone number...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write your phone number...", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(password))
         {
-            Toast.makeText(this, "Please enter your password...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write your password...", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(retypePassword))
         {
@@ -129,11 +131,15 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
         }
         else if (!TextUtils.equals(password,retypePassword))
         {
-            Toast.makeText(this, "Password are not same...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Password doesn't match...", Toast.LENGTH_SHORT).show();
         }
         else if (radioID == -1)
         {
             Toast.makeText(this, "Please select type of user...", Toast.LENGTH_SHORT).show();
+        }
+        else if (TextUtils.isEmpty(dob))
+        {
+            Toast.makeText(this, "Please enter your Date Of Birth...", Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -142,11 +148,11 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
 
-            ValidatePhoneNumber(name, phone, password, address, user);
+            ValidatePhoneNumber(name, phone, password, address, user, dob);
         }
     }
 
-    private void ValidatePhoneNumber(String name, String phone, String password, String address, String user) {
+    private void ValidatePhoneNumber(String name, String phone, String password, String address, String user, String dob) {
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
 
@@ -162,6 +168,7 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
                     userdataMap.put("name", name);
                     userdataMap.put("address", address);
                     userdataMap.put("user", user);
+                    userdataMap.put("dob", dob);
 
                     RootRef.child("Users").child(phone).updateChildren(userdataMap)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {

@@ -7,31 +7,56 @@
     android:background="@drawable/register"
     tools:context=".RegisterActivity">
 
+    <EditText
+        android:id="@+id/security_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_password_input"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="59dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:hint="Date of Birth (dd/mm/yyyy)"
+        android:padding="10dp"
+        android:inputType="date"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textStyle="bold"
+        android:textSize="19sp" />
+
+    <ImageView
+        android:id="@+id/login_applogo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="160dp"
+        android:src="@drawable/applogo" />
+
     <ImageView
         android:id="@+id/register_applogo"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:src="@drawable/applogo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        />
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="260dp" />
 
     <EditText
         android:id="@+id/register_username_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_applogo"
-        android:background="@drawable/input_design"
-        android:padding="20dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="-204dp"
         android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
         android:hint="Name"
         android:inputType="text"
-        android:textStyle="bold"
+        android:padding="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="19sp"
-        />
+        android:textStyle="bold"
+        android:textSize="19sp" />
 
     <EditText
         android:id="@+id/register_phone_number_input"
@@ -39,18 +64,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_username_input"
         android:background="@drawable/input_design"
-        android:padding="20dp"
+        android:padding="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:hint="Phone Number"
         android:inputType="number"
-        android:textStyle="bold"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        android:textStyle="bold"
         android:textSize="19sp"
         android:layout_marginTop="6dp"
         />
-
 
     <EditText
         android:id="@+id/register_password_input"
@@ -58,50 +82,51 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_phone_number_input"
         android:background="@drawable/input_design"
-        android:padding="20dp"
+        android:padding="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="6dp"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textStyle="bold"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
+        android:textStyle="bold"
         android:textSize="19sp"
         />
+
+
     <EditText
         android:id="@+id/register_retype_password_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/register_password_input"
-        android:background="@drawable/input_design"
-        android:padding="20dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:layout_marginTop="6dp"
-        android:hint="Retype Password"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/input_design"
+        android:hint="ReEnter Password"
         android:inputType="textPassword"
-        android:textStyle="bold"
+        android:padding="10dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textSize="19sp"
-        />
+        android:textStyle="bold"
+        android:textSize="19sp" />
 
     <Button
         android:id="@+id/register_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/register_retype_password_input"
-        android:layout_marginTop="5dp"
+        android:layout_below="@+id/register_password_input"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="301dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/buttons"
-        android:padding="17dp"
-        android:textAllCaps="false"
-        android:textSize="18sp"
         android:text="Create Account"
+        android:textAllCaps="false"
         android:textColor="@android:color/white"
-        />
+        android:textSize="18sp" />
+
     <Button
         android:id="@+id/get_location"
         android:layout_width="wrap_content"
@@ -119,17 +144,19 @@
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/register_retype_password_input"
+        android:layout_below="@+id/security_question"
         android:layout_alignParentStart="true"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="4dp"
         android:text="Type of user"
-        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textColor="@color/white"
         android:textSize="25dp" />
-
 
     <TextView
         android:id="@+id/current_location"
@@ -140,26 +167,31 @@
         android:text="Current Location"
         android:layout_marginLeft="24dp"
         android:textColor="@color/white"
+        android:textStyle="bold"
         android:textSize="24dp" />
+
     <RadioGroup
         android:id="@+id/type_of_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/register_retype_password_input"
-
-        android:layout_marginTop="60dp"
+        android:layout_below="@+id/security_question"
+        android:layout_alignParentEnd="true"
         android:layout_marginLeft="24dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="57dp"
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/Customer"
+            android:id="@+id/customer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Customer"
             android:layout_marginRight="10dp"
+            android:text="Customer"
             android:textColor="@color/white"
+            android:textStyle="bold"
 
             />
+
         <RadioButton
 
             android:id="@+id/Retailer"
@@ -167,17 +199,17 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
             android:text="Retailer"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/Wholesaler"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Wholesaler"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </RadioGroup>
-
-
 
 
 </RelativeLayout>
