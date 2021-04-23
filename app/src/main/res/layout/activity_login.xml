@@ -115,6 +115,7 @@
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20dp"
         android:textStyle="bold" />
+
     <TextView
         android:id="@+id/Wholesaler"
         android:layout_width="wrap_content"
