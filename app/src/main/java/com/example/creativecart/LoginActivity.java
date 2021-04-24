@@ -40,8 +40,9 @@ public class LoginActivity extends AppCompatActivity {
     private TextView InputPhoneNumber;
     private Button LoginButton, SendOtp, VerifyOtp;
     private ProgressDialog loadingBar;
-    private TextView Customer, Retailer, Wholesaler, eOTP;
-    private String parentDbName = "Customer", verificationId, verificationStatus, PhnNo ;
+    private TextView Customer, Retailer, Wholesaler, eOTP, ForgotPassword;
+    private String parentDbName = "Customer", verificationId, verificationStatus;
+    public String PhnNo;
     private FirebaseAuth mAuth;
 
     @Override
@@ -61,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         Wholesaler = findViewById(R.id.Wholesaler);
         loadingBar = new ProgressDialog(this);
         InputPhoneNumber.setText(PhnNo);
+        ForgotPassword = findViewById(R.id.forget_password_link);
 
         //eOTP.setOnClickListener(new View.OnClickListener() {
         //    @Override
@@ -86,6 +88,15 @@ public class LoginActivity extends AppCompatActivity {
                 Retailer.setVisibility(View.VISIBLE);
                 Wholesaler.setVisibility(View.VISIBLE);
                 parentDbName = "Customer";
+            }
+        });
+
+        ForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ForgotPasswordActivity.class);
+                intent.putExtra("PhnNo", InputPhoneNumber.getText().toString());
+                startActivity(intent);
             }
         });
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.creativecart.Prevalent.Prevalent;
@@ -20,8 +21,10 @@ import com.google.firebase.database.ValueEventListener;
 public class ForgotPasswordActivity extends AppCompatActivity
 {
     private String DOB,verify="Not Verified";
-    private EditText Security,phone,NewPassword,ConfirmPassword ;
+    private EditText Security,NewPassword,ConfirmPassword;
+    private TextView phone;
     private Button VerifyDob,ChangePassword;
+    private String PNo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,8 @@ public class ForgotPasswordActivity extends AppCompatActivity
         ConfirmPassword = findViewById(R.id.confirm_new_password);
         VerifyDob = findViewById(R.id.verify_security);
         ChangePassword = findViewById(R.id.change_password);
+        PNo = getIntent().getExtras().get("PhnNo").toString() ;
+        phone.setText(PNo);
 
 
         VerifyDob.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +63,7 @@ public class ForgotPasswordActivity extends AppCompatActivity
                         }
                         else
                         {
-                            Toast.makeText(ForgotPasswordActivity.this, "Number NOt Verified",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ForgotPasswordActivity.this, "Number Not Verified",Toast.LENGTH_SHORT).show();
 
                         }
                     }

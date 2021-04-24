@@ -34,7 +34,7 @@ import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 
 public class Otpactivity1 extends AppCompatActivity{
-    private TextView eOTP;
+    private Button eOTP;
 
     @Override
     protected void onCreate(Bundle savedInstance) {

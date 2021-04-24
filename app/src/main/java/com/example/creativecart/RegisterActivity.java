@@ -180,7 +180,7 @@ public class RegisterActivity extends AppCompatActivity implements LocationListe
                                         Toast.makeText(RegisterActivity.this, "Congratulations, your account has been created.", Toast.LENGTH_SHORT).show();
                                         loadingBar.dismiss();
 
-                                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                        Intent intent = new Intent(RegisterActivity.this, Otpactivity1.class);
                                         startActivity(intent);
                                     }
                                     else
