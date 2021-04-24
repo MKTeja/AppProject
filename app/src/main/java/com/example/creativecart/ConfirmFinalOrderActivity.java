@@ -1,6 +1,5 @@
 package com.example.creativecart;
 
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -123,7 +122,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity
         ordersMap.put("city", cityEditText.getText().toString());
         ordersMap.put("date", saveCurrentDate);
         ordersMap.put("time", saveCurrentTime);
-        ordersMap.put("state", "not shipped");
+        ordersMap.put("state", "Order Placed");
 
         ordersRef.updateChildren(ordersMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -186,7 +185,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity
             {
                 if (task.isSuccessful())
                 {
-                    Toast.makeText(ConfirmFinalOrderActivity.this, "Wait for order updates",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ConfirmFinalOrderActivity.this, "Wait for updates",Toast.LENGTH_SHORT).show();
                 }
             }
         });
