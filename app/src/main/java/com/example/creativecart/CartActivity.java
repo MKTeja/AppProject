@@ -10,6 +10,7 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -88,7 +89,17 @@ public class CartActivity extends AppCompatActivity {
                 holder.txtProductQuantity.setText("Quantity = " + model.getQuantity());
                 holder.txtProductPrice.setText("Price " + model.getPrice() + "$");
                 holder.txtProductName.setText(model.getPname());
-
+//                int x,y;
+//                if (!TextUtils.isEmpty(model.getPrice()) && TextUtils.isDigitsOnly(model.getPrice())) {
+//                    x = Integer.parseInt(model.getPrice());
+//                } else {
+//                    x = 0;
+//                }
+//                if (!TextUtils.isEmpty(model.getQuantity()) && TextUtils.isDigitsOnly(model.getQuantity())) {
+//                    y = Integer.parseInt(model.getPrice());
+//                } else {
+//                    y = 0;
+//                }
                 int oneTyprProductTPrice = Integer.parseInt(model.getPrice()) * Integer.parseInt(model.getQuantity());
                 overTotalPrice = overTotalPrice + oneTyprProductTPrice;
 
@@ -115,7 +126,6 @@ public class CartActivity extends AppCompatActivity {
                                 if (i == 1) {
                                     cartListRef.child(Prevalent.currentOnlineUser.getUser())
                                             .child(Prevalent.currentOnlineUser.getPhone())
-                                            .child("Products")
                                             .child(model.getPid())
                                             .removeValue()
                                             .addOnCompleteListener(new OnCompleteListener<Void>() {

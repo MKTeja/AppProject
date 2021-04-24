@@ -15,7 +15,6 @@ import com.example.creativecart.ViewHolder.ProductViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -217,6 +216,12 @@ public class HomeActivity extends AppCompatActivity
         else if (id == R.id.nav_add)
         {
             Intent intent = new Intent(HomeActivity.this,UpdateItemsActivity.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.nav_received)
+        {
+            Intent intent = new Intent(HomeActivity.this,NewOrdersActivity.class);
+            intent.putExtra("ToO", "1");
             startActivity(intent);
         }
         else if (id == R.id.nav_categories)
